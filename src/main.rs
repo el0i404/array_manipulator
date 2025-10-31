@@ -108,7 +108,15 @@ fn find_second_largest(data: &[i32]) -> Option<i32> {
 
 fn calculate_median(data: &[i32]) -> Option<f64> {
     // Calculate median (you'll need to sort a copy)
-    None
+    let mut amount = data.iter().count() as f64;
+    let mut acc  = 0;
+    let mut result = None;
+
+    data.iter().clone().for_each(|x| acc += x as &f64);
+
+    result = Some(acc as f64 / amount as f64);
+
+    result
 }
 
 fn find_subslice(data: &[i32], pattern: &[i32]) -> Option<usize> {
