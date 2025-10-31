@@ -78,18 +78,26 @@ fn filter_even(data: &[i32]) -> Vec<i32> {
     // Note: This creates new data, but original slice is unchanged
     let mut even_numbers:Vec<i32> = vec![];
 
-    const result: [i32] = data.iter().cloned().filter(|&x| {
+     data.iter().cloned().for_each(|x| {
         if x % 2 != 0 {
             even_numbers.push(x)
         }
     });
-    
+
     even_numbers
 }
 
 fn filter_greater_than(data: &[i32], threshold: i32) -> Vec<i32> {
     // Return vector of numbers greater than threshold
-    vec![]
+    let mut greaters= vec![];
+
+    data.iter().cloned().for_each(|x| {
+        if x > threshold {
+            greaters.push(x)
+        }
+    });
+
+    greaters
 }
 
 // Bonus functions:
